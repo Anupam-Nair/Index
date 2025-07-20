@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anupam Nair | Mechanical Engineering Student</title>
+    <style>
+        /* --- Global Styles --- */
+        :root {
+            /* 'Modern Engineering Blueprint' Palette */
+            --primary-bg: #1D2B3A;      /* Deep Navy Blue */
+            --secondary-bg: #28384A;    /* Slate Blue for cards */
+            --text-color: #EAEAEA;      /* Off-white for text */
+            --header-color: #FFFFFF;    /* Pure White for main headers */
+            --accent-color: #FFC107;     /* Industrial Yellow */
+            --border-color: #3A4E62;    /* Muted Blue for borders */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-bg);
+            /* Subtle Grid Background */
+            background-image:
+                linear-gradient(rgba(58, 78, 98, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(58, 78, 98, 0.4) 1px, transparent 1px);
+            background-size: 25px 25px;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: rgba(29, 43, 58, 0.85);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap; /* Allows nav items to wrap on smaller screens */
+        }
+
+        .navbar li {
+            margin: 5px 15px;
+        }
+
+        .navbar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: var(--accent-color);
+        }
+
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            text-align: center;
+            padding: 60px 20px;
+            background-color: transparent;
+        }
+
+        header h1 {
+            color: var(--header-color);
+            font-size: 3em;
+            margin: 0;
+        }
+
+        header .tagline {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 60px 0 40px 0; /* Added top padding for nav anchor offset */
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.2em;
+            color: var(--header-color);
+            margin-bottom: 40px;
+        }
+
+        /* --- Info Card (Education, Positions, Experience) --- */
+        .info-card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-left: 5px solid var(--accent-color); /* Accent border */
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .info-card h3 {
+            color: var(--header-color);
+            margin: 0 0 5px 0;
+        }
+
+        .info-card .organization {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 0 0 10px 0;
+        }
+
+        .info-card .tenure {
+            color: #ccc;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .info-card .details {
+            color: #ccc;
+            font-style: italic;
+        }
+
+        .info-card ul {
+            padding-left: 20px;
+            margin: 15px 0 0 0;
+        }
+        
+        .info-card li {
+            margin-bottom: 5px;
+        }
+
+
+        /* --- Projects Section --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card h3 {
+            color: var(--header-color);
+            margin-top: 0;
+        }
+
+        .project-card p {
+            flex-grow: 1;
+        }
+
+        /* --- Skills Section --- */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-category {
+            background: var(--secondary-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            flex-basis: 280px;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .skill-category h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .skill-category li {
+            margin-bottom: 10px;
+        }
+        
+        /* --- Languages Section --- */
+        .languages-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .language-item {
+            background-color: var(--secondary-bg);
+            border-radius: 8px;
+            padding: 20px 25px;
+            text-align: center;
+            flex-basis: 200px;
+        }
+
+        .language-item h3 {
+            margin: 0 0 5px 0;
+            color: var(--header-color);
+        }
+
+        .language-item p {
+            margin: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+
+        /* --- Certifications & Contact Section --- */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #1a1a1a;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e6ac00;
+        }
+
+        .contact-links, #certifications .container {
+            text-align: center;
+        }
+
+        .contact-links a {
+            margin: 0 15px;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            transform: scale(1.1);
+        }
+
+        .contact-links svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--text-color);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#positions">Positions</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#languages">Languages</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Anupam Nair</h1>
+        <p class="tagline">Technically Versatile Mechanical Engineering Student</p>
+    </header>
+
+    <div class="container">
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                A technically versatile final-year Mechanical Engineering student, I possess hands-on proficiency in CAD, ANSYS, MATLAB, OpenSim, and ROS. I am skilled in programming languages such as Python, C, MySQL, and foundational Java, applying a systems-level approach to simulation, modeling, and automation. I excel at integrating mechanical principles with software-driven solutions to enhance efficiency, precision, and performance in practical applications.
+            </p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="info-card">
+                <h3>Bachelor Of Technology In Mechanical Engineering</h3>
+                <p class="organization">NSS College Of Engineering</p>
+                <p class="details">Expected Completion: 2026 | Status: Pursuing </p>
+            </div>
+             <div class="info-card">
+                <h3>Senior Secondary School</h3>
+                <p class="organization">MGM Model School, Varkala / CBSE</p>
+                <p class="details">Completed: 2021 | Score: 74.8% </p>
+            </div>
+             <div class="info-card">
+                <h3>Secondary School</h3>
+                <p class="organization">MarThoma Central School, Varkala / CBSE</p>
+                <p class="details">Completed: 2019 | Score: 85% </p>
+            </div>
+        </section>
+
+        <section id="positions">
+            <h2>Positions of Responsibility</h2>
+            <div class="info-card">
+                <h3>Technical Head</h3>
+                <p class="organization">SAE NSSCE </p>
+            </div>
+            <div class="info-card">
+                <h3>Team Captain</h3>
+                <p class="organization">SAE ISS ADDC Team </p>
+            </div>
+            <div class="info-card">
+                <h3>District Coordinator</h3>
+                <p class="organization">Junior Red Cross </p>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="info-card">
+                <h3>Robotics Intern (Hybrid)</h3>
+                <p class="organization">Kodacy Robotics </p>
+                <ul>
+                    <li>Studied ROS, developed a ROS-based robotic project with real-time simulations.</li>
+                    <li>Created ROS nodes and tested real-time robotic control systems.</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Program Coordinator</h3>
+                <p class="organization">Nova Space Technical Program</p>
+                <p class="tenure">March 10th - 15th</p>
+                <ul>
+                    <li>Coordinated the scheduling and execution of technical sessions and workshops, ensuring a smooth program flow for all participants.</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Event Coordinator</h3>
+                <p class="organization">Dyuksha 2023 </p>
+                <ul>
+                    <li>Managed event logistics, onsite execution, vendor negotiation, and budgeting.</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h3>Industrial Trainee</h3>
+                <p class="organization">Steel And Industrial Forgings Ltd </p>
+                <ul>
+                    <li>Assisted production workflow, inventory management, and report preparation.</li>
+                </ul>
+            </div>
+             <div class="info-card">
+                <h3>Industrial Trainee</h3>
+                <p class="organization">KSEB Kozhikode Diesel Power Project </p>
+                <ul>
+                    <li>Completed a 5-day training on power plant operations.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Final Year Project: Thermal Engineering</h3>
+                    <p>Experimental study on biofuel blends focusing on engine emissions and thermal efficiency.</p>
+                </div>
+                <div class="project-card">
+                    <h3>ROS Package Development (Internship)</h3>
+                    <p>Created ROS nodes and tested real-time robotic control systems.</p>
+                </div>
+                <div class="project-card">
+                    <h3>SAE ISS Autonomous Drone Project</h3>
+                    <p>Lead a 10-member team to design and integrate autonomous drone systems with multi-sensor fusion and mission scripting.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Mechanical Hand (Scrap-Based)</h3>
+                    <p>Designed a functional mechanical hand replicating human motion using recycled materials.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Python-MySQL Social App Prototype</h3>
+                    <p>Developed a demo app with front-end/back-end integration for dynamic content and data management.</p>
+                </div>
+                <div class="project-card">
+                    <h3>IoT in Agriculture</h3>
+                    <p>Built a sensor-based system for real-time soil moisture tracking to optimize irrigation.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming & Scripting</h3>
+                    <ul>
+                        <li>Python </li>
+                        <li>MySQL </li>
+                        <li>C </li>
+                        <li>Java (foundational) </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Simulation & Analysis</h3>
+                    <ul>
+                        <li>MATLAB </li>
+                        <li>ANSYS </li>
+                        <li>OpenSim </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Design & Modelling</h3>
+                    <ul>
+                        <li>AutoCAD </li>
+                        <li>SolidWorks </li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Robotics & Embedded</h3>
+                    <ul>
+                        <li>ROS (Robot Operating System) </li>
+                        <li>Arduino </li>
+                        <li>Raspberry Pi </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages">
+            <h2>Languages</h2>
+            <div class="languages-container">
+                <div class="language-item">
+                    <h3>English</h3>
+                    <p>Fluent </p>
+                </div>
+                <div class="language-item">
+                    <h3>Malayalam</h3>
+                    <p>Fluent </p>
+                </div>
+                <div class="language-item">
+                    <h3>Hindi</h3>
+                    <p>Native </p>
+                </div>
+                <div class="language-item">
+                    <h3>Tamil</h3>
+                    <p>Conversational </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="container">
+                <h2>Certifications</h2>
+                <p>I believe in continuous learning. You can view my certifications below.</p>
+                <a href="https://drive.google.com/drive/folders/1Ae8roP-srmFx3vCh6n4dO1BXlxn26jRl" target="_blank" class="cta-button">View My Certifications</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-links">
+                <a href="mailto:anupamnair2003@gmail.com" title="Email">
+                    <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/anupamnairmech" target="_blank" title="LinkedIn">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-3.06v9.37h3.06v-4.6c0-1.21.83-2.22 2.22-2.22s2.22 1 2.22 2.22v4.6h3.14M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69.75 1.68 1.68 0 0 0 0 1.88 1.68 1.68 0 0 0 1.69.74m-1.56 10h3.12v-9.37H5.32v9.37z"></path></svg>
+                </a>
+                <a href="https://github.com/Anupam-Nair" target="_blank" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.1.39-1.99 1.03-2.69a3.6 3.6 0 0 1 .1-2.64s.84-.27 2.75 1.02a9.58 9.58 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.4.1 2.64.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 22 12 10 10 0 0 0 12 2Z"></path></svg>
+                </a>
+                 <a href="https://www.hackerrank.com/profile/anupamnair2003" target="_blank" title="HackerRank">
+                      <svg viewBox="0 0 24 24"><path d="M12.75 18.865V5.135a1.28 1.28 0 0 0-2.559 0v13.73a1.28 1.28 0 1 0 2.56 0zM7.524 15.364V8.636a1.28 1.28 0 1 0-2.56 0v6.728a1.28 1.28 0 1 0 2.56 0zm11.512 0V8.636a1.28 1.28 0 1 0-2.56 0v6.728a1.28 1.28 0 1 0 2.56 0zM3.245 3.245a1.25 1.25 0 0 0 0 1.768l15.742 15.742a1.25 1.25 0 0 0 1.768-1.768L5.013 3.245a1.25 1.25 0 0 0-1.768 0z"></path></svg>
+                </a>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Anupam Nair. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
