@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Anupam Nair | Mechanical Engineering Student</title>
     <style>
         /* --- Global Styles --- */
@@ -56,7 +56,7 @@
         }
 
         .navbar li {
-            margin: 5px 15px;
+            margin: 5px 12px;
         }
 
         .navbar a {
@@ -64,7 +64,7 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 0.9em;
-            padding: 5px 10px;
+            padding: 6px 12px;
             border-radius: 5px;
             transition: color 0.3s ease, background-color 0.3s ease;
         }
@@ -72,7 +72,6 @@
         .navbar a:hover {
             color: var(--accent-color);
         }
-
 
         .container {
             max-width: 1000px;
@@ -157,7 +156,6 @@
         .info-card li {
             margin-bottom: 5px;
         }
-
 
         /* --- Projects Section --- */
         .projects-grid {
@@ -298,24 +296,34 @@
             color: #888;
         }
 
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            header h1 { font-size: 2em; }
+            header .tagline { font-size: 1em; }
+            .navbar li { margin: 5px 8px; }
+        }
     </style>
 </head>
 <body>
 
     <nav class="navbar">
         <ul>
-            <li><a href="#about">About</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#education">Education</a></li>
-            <li><a href="#positions">Positions</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#positions">Positions of Responsibility</a></li>
+            <li><a href="#experience">Professional Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#beyond">Beyond the Blueprint</a></li>
             <li><a href="#languages">Languages</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
-    <header>
+    <header id="home">
         <h1>Anupam Nair</h1>
         <p class="tagline">Technically Versatile Mechanical Engineering Student</p>
     </header>
@@ -325,6 +333,7 @@
         <section id="about">
             <h2>About Me</h2>
             <p>
+                Anupam Nair
                 A technically versatile final-year Mechanical Engineering student, I possess hands-on proficiency in CAD, ANSYS, MATLAB, OpenSim, and ROS. I am skilled in programming languages such as Python, C, MySQL, and foundational Java, applying a systems-level approach to simulation, modeling, and automation. I excel at integrating mechanical principles with software-driven solutions to enhance efficiency, precision, and performance in practical applications.
             </p>
         </section>
@@ -334,142 +343,237 @@
             <div class="info-card">
                 <h3>Bachelor Of Technology In Mechanical Engineering</h3>
                 <p class="organization">NSS College Of Engineering</p>
-                <p class="details">Expected Completion: 2026 | Status: Pursuing </p>
+                <p class="details">Expected Completion: 2026 | Status: Pursuing</p>
             </div>
-             <div class="info-card">
+            <div class="info-card">
                 <h3>Senior Secondary School</h3>
                 <p class="organization">MGM Model School, Varkala / CBSE</p>
-                <p class="details">Completed: 2021 | Score: 74.8% </p>
+                <p class="details">Completed: 2021 | Score: 74.8%</p>
             </div>
-             <div class="info-card">
+            <div class="info-card">
                 <h3>Secondary School</h3>
                 <p class="organization">MarThoma Central School, Varkala / CBSE</p>
-                <p class="details">Completed: 2019 | Score: 85% </p>
+                <p class="details">Completed: 2019 | Score: 85%</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming &amp; Scripting</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>MySQL</li>
+                        <li>C</li>
+                        <li>Java (foundational)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Simulation &amp; Analysis</h3>
+                    <ul>
+                        <li>MATLAB</li>
+                        <li>ANSYS</li>
+                        <li>OpenSim</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Design &amp; Modelling</h3>
+                    <ul>
+                        <li>AutoCAD</li>
+                        <li>SolidWorks</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Robotics &amp; Embedded</h3>
+                    <ul>
+                        <li>ROS (Robot Operating System)</li>
+                        <li>Arduino</li>
+                        <li>Raspberry Pi</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="positions">
             <h2>Positions of Responsibility</h2>
+
             <div class="info-card">
                 <h3>Technical Head</h3>
-                <p class="organization">SAE NSSCE </p>
+                <p class="organization">SAE NSSCE (Since 2025)</p>
+                <ul>
+                    <li>Spearhead technical initiatives, overseeing student-led engineering projects with focus on practical CAD modeling, embedded systems, and robotics.</li>
+                    <li>Organize workshops and foster industry collaborations to bridge theoretical knowledge and hands-on application.</li>
+                    <li>Mentor juniors in robotics, CAD, control systems, elevating overall technical skill level within the club.</li>
+                </ul>
             </div>
+
             <div class="info-card">
                 <h3>Team Captain</h3>
-                <p class="organization">SAE ISS ADDC Team </p>
+                <p class="organization">SAE ISS ADDC Team</p>
+                <ul>
+                    <li>Lead a multidisciplinary team to design and implement an autonomous drone integrating hardware and software systems.</li>
+                    <li>Manage project timelines, delegate tasks, and ensure cross-domain collaboration between mechanical, electrical, and software engineers.</li>
+                    <li>Achieved high competitive ranking by optimizing drone performance and rigorous flight testing.</li>
+                </ul>
             </div>
+
             <div class="info-card">
                 <h3>District Coordinator</h3>
-                <p class="organization">Junior Red Cross </p>
+                <p class="organization">Junior Red Cross</p>
+                <ul>
+                    <li>Coordinate district-wide volunteer activities focused on disaster response, health programs, and community outreach.</li>
+                    <li>Streamline communication between schools and district offices for effective event execution.</li>
+                    <li>Increase volunteer engagement via structured planning and feedback.</li>
+                </ul>
             </div>
         </section>
 
         <section id="experience">
             <h2>Professional Experience</h2>
-            <div class="info-card">
-                <h3>Robotics Intern (Hybrid)</h3>
-                <p class="organization">Kodacy Robotics </p>
-                <ul>
-                    <li>Studied ROS, developed a ROS-based robotic project with real-time simulations.</li>
-                    <li>Created ROS nodes and tested real-time robotic control systems.</li>
-                </ul>
-            </div>
+
             <div class="info-card">
                 <h3>Program Coordinator</h3>
                 <p class="organization">Nova Space Technical Program</p>
-                <p class="tenure">March 10th - 15th</p>
+                <p class="tenure">March 10-15, 2025</p>
                 <ul>
-                    <li>Coordinated the scheduling and execution of technical sessions and workshops, ensuring a smooth program flow for all participants.</li>
+                    <li>Coordinated Kerala’s largest space workshop with participation from thousands of students across multiple colleges and branches.</li>
+                    <li>Managed scheduling, logistics, speaker coordination, and resource allocation to ensure smooth execution.</li>
+                    <li>Acted as liaison between technical presenters and attendees, troubleshooting session flow in real-time.</li>
                 </ul>
             </div>
+
+            <div class="info-card">
+                <h3>Robotics Intern (Hybrid)</h3>
+                <p class="organization">Kodacy Robotics</p>
+                <ul>
+                    <li>Completed remote learning of ROS fundamentals through live classes.</li>
+                    <li>Onsite at Model Engineering College (MEC), led intern teams coding ROS programs for autonomous rover navigation and automation.</li>
+                    <li>Developed ROS nodes integrating sensors, actuators, and navigation algorithms using Python and C++.</li>
+                    <li>Tested and iterated real-time control systems both in simulation and hardware environments.</li>
+                </ul>
+            </div>
+
             <div class="info-card">
                 <h3>Event Coordinator</h3>
-                <p class="organization">Dyuksha 2023 </p>
+                <p class="organization">Dyuksha 2023</p>
                 <ul>
-                    <li>Managed event logistics, onsite execution, vendor negotiation, and budgeting.</li>
+                    <li>Managed logistics and technical coordination for one of Kerala’s largest tech festivals attended by thousands.</li>
+                    <li>Negotiated with vendors, handled budgeting, and organized venues for events, workshops, and contests.</li>
+                    <li>Collaborated with multiple teams for registrations, technical support, and on-site problem-solving.</li>
                 </ul>
             </div>
+
             <div class="info-card">
                 <h3>Industrial Trainee</h3>
-                <p class="organization">Steel And Industrial Forgings Ltd </p>
+                <p class="organization">Steel And Industrial Forgings Ltd (SIFL)</p>
                 <ul>
-                    <li>Assisted production workflow, inventory management, and report preparation.</li>
+                    <li>Studied manufacturing processes including raw material handling, forging operations, and quality control.</li>
+                    <li>Documented workflow across departments and submitted detailed reports with suggestions for process improvements.</li>
                 </ul>
             </div>
-             <div class="info-card">
+
+            <div class="info-card">
                 <h3>Industrial Trainee</h3>
-                <p class="organization">KSEB Kozhikode Diesel Power Project </p>
+                <p class="organization">KSEB Kozhikode Diesel Power Project</p>
                 <ul>
-                    <li>Completed a 5-day training on power plant operations.</li>
+                    <li>Completed a 5-day intensive training on diesel power plant operation, maintenance, and safety protocols.</li>
+                    <li>Gained hands-on exposure to thermal systems, generators, and emergency response procedures.</li>
+                    <li>Assisted engineers in routine inspections and data collection.</li>
                 </ul>
             </div>
+
         </section>
 
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-grid">
+
                 <div class="project-card">
-                    <h3>Final Year Project: Thermal Engineering</h3>
-                    <p>Experimental study on biofuel blends focusing on engine emissions and thermal efficiency.</p>
+                    <h3>Gear Vibration Analysis Project (Ongoing)</h3>
+                    <p>Engaged in real-time experimental study to detect gear faults through vibration analysis. Utilized SKF6007 bearing, ICP accelerometer, and NI DAQ system with LabVIEW for data acquisition. Developing MATLAB-based AI models for fault detection and predictive maintenance.</p>
                 </div>
+
                 <div class="project-card">
-                    <h3>ROS Package Development (Internship)</h3>
-                    <p>Created ROS nodes and tested real-time robotic control systems.</p>
+                    <h3>Thermal Engineering Project – Ethanol-Petrol Blend Study</h3>
+                    <p>Conducted engine performance tests on a custom Maruti rig analyzing ethanol blends. Measured brake thermal efficiency, fuel consumption, and emissions under different blends. Cross-validated findings with research papers to assess environmental and efficiency impacts.</p>
                 </div>
+
+                <div class="project-card">
+                    <h3>Sustainable Aviation Fuel (SAF) Research Project</h3>
+                    <p>Developed a syringe pump to simulate Fischer-Tropsch bubble reactions for SAF production. Collaborated with CSIR Dhanbad and Microfluidics Lab at College of Engineering Trivandrum. Coordinated with industry and research partners, leading to district finalist placement at Dreamvestor. Oversaw prototype design, data analysis, and commercialization planning.</p>
+                </div>
+
                 <div class="project-card">
                     <h3>SAE ISS Autonomous Drone Project</h3>
-                    <p>Lead a 10-member team to design and integrate autonomous drone systems with multi-sensor fusion and mission scripting.</p>
+                    <p>Captained a team designing an autonomous drone with sensor fusion (GPS, LiDAR, ultrasonic). Implemented mission scripting for obstacle avoidance and navigation using Pixhawk and Raspberry Pi integration. Managed flight testing and optimization leading to competitive success.</p>
                 </div>
+
                 <div class="project-card">
                     <h3>Mechanical Hand (Scrap-Based)</h3>
-                    <p>Designed a functional mechanical hand replicating human motion using recycled materials.</p>
+                    <p>Designed and fabricated a mechanical hand replicating human finger motions with recycled materials. Focused on ergonomic design and functional grasping using simple mechanical linkages.</p>
                 </div>
+
                 <div class="project-card">
-                    <h3>Python-MySQL Social App Prototype</h3>
-                    <p>Developed a demo app with front-end/back-end integration for dynamic content and data management.</p>
+                    <h3>ROS Package Development (Internship Project)</h3>
+                    <p>Created ROS packages for sensor data handling, actuator control, and autonomous navigation. Developed ROS nodes in Python with modular design. Conducted thorough testing in simulation and hardware environments.</p>
                 </div>
+
                 <div class="project-card">
                     <h3>IoT in Agriculture</h3>
-                    <p>Built a sensor-based system for real-time soil moisture tracking to optimize irrigation.</p>
+                    <p>Built a sensor-based automation system at IRTC Mundur for plant growth control. Automated irrigation and sunlight control via soil moisture and light sensors linked to microcontrollers. Enabled remote environmental monitoring and resource optimization.</p>
                 </div>
+
+                <div class="project-card">
+                    <h3>Python-MySQL Social App Prototype</h3>
+                    <p>Developed a prototype full-stack social app integrating front-end with MySQL back-end. Implemented user authentication, dynamic content management, and real-time updates. Designed modular code architecture for easy scalability.</p>
+                </div>
+
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming & Scripting</h3>
-                    <ul>
-                        <li>Python </li>
-                        <li>MySQL </li>
-                        <li>C </li>
-                        <li>Java (foundational) </li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Simulation & Analysis</h3>
-                    <ul>
-                        <li>MATLAB </li>
-                        <li>ANSYS </li>
-                        <li>OpenSim </li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Design & Modelling</h3>
-                    <ul>
-                        <li>AutoCAD </li>
-                        <li>SolidWorks </li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Robotics & Embedded</h3>
-                    <ul>
-                        <li>ROS (Robot Operating System) </li>
-                        <li>Arduino </li>
-                        <li>Raspberry Pi </li>
-                    </ul>
-                </div>
+        <section id="achievements">
+            <h2>Achievements</h2>
+            <div class="info-card">
+                <ul>
+                    <li>First place at a tech fest for mechanical hand fabrication using scrap material (team of 4).</li>
+                    <li>District finalists at Dreamvestor competition for SAF research project.</li>
+                    <li>Rank 6 in Kerala and All India Rank 28 in SAE ISS ADDC competition.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="info-card">
+                <p>I believe in continuous learning. You can view my certifications below.</p>
+                <a href="https://drive.google.com/drive/folders/1Ae8roP-srmFx3vCh6n4dO1BXlxn26jRl" target="_blank" class="cta-button">View My Certifications</a>
+            </div>
+        </section>
+
+        <section id="beyond">
+            <h2>Beyond the Blueprint</h2>
+            <div class="info-card">
+                <p>
+                    Industrial visits to:
+                </p>
+                <ul>
+                    <li>Fluid Control Research Institute (FCRI), India</li>
+                    <li>Travancore Titanium Products Limited (TTPL), Kerala</li>
+                    <li>Naval Physical &amp; Oceanographic Laboratory (NPOL)</li>
+                    <li>Idukki Arch Dam</li>
+                </ul>
+
+                <p>Represented Kerala in Yuva Sangam 2023:</p>
+                <ul>
+                    <li>Visited premier institutions including MNNIT, IIT Bhubaneswar, NTPC Meja, Integrated Control Center, etc.</li>
+                </ul>
+
+                <p>Attended workshops at ISRO, IISc and other prestigious organizations.</p>
+
+                <p>Presented and published papers on project management and aerospace topics.</p>
+
+                <p>Volunteered extensively in various student clubs and social initiatives.</p>
             </div>
         </section>
 
@@ -478,33 +582,25 @@
             <div class="languages-container">
                 <div class="language-item">
                     <h3>English</h3>
-                    <p>Fluent </p>
+                    <p>Fluent</p>
                 </div>
                 <div class="language-item">
                     <h3>Malayalam</h3>
-                    <p>Fluent </p>
+                    <p>Fluent</p>
                 </div>
                 <div class="language-item">
                     <h3>Hindi</h3>
-                    <p>Native </p>
+                    <p>Native</p>
                 </div>
                 <div class="language-item">
                     <h3>Tamil</h3>
-                    <p>Conversational </p>
+                    <p>Conversational</p>
                 </div>
-            </div>
-        </section>
-
-        <section id="certifications">
-            <div class="container">
-                <h2>Certifications</h2>
-                <p>I believe in continuous learning. You can view my certifications below.</p>
-                <a href="https://drive.google.com/drive/folders/1Ae8roP-srmFx3vCh6n4dO1BXlxn26jRl" target="_blank" class="cta-button">View My Certifications</a>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get In Touch</h2>
+            <h2>Contact</h2>
             <div class="contact-links">
                 <a href="mailto:anupamnair2003@gmail.com" title="Email">
                     <svg viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"></path></svg>
@@ -519,6 +615,15 @@
                       <svg viewBox="0 0 24 24"><path d="M12.75 18.865V5.135a1.28 1.28 0 0 0-2.559 0v13.73a1.28 1.28 0 1 0 2.56 0zM7.524 15.364V8.636a1.28 1.28 0 1 0-2.56 0v6.728a1.28 1.28 0 1 0 2.56 0zm11.512 0V8.636a1.28 1.28 0 1 0-2.56 0v6.728a1.28 1.28 0 1 0 2.56 0zM3.245 3.245a1.25 1.25 0 0 0 0 1.768l15.742 15.742a1.25 1.25 0 0 0 1.768-1.768L5.013 3.245a1.25 1.25 0 0 0-1.768 0z"></path></svg>
                 </a>
             </div>
+
+            <div style="margin-top:20px; text-align:center; color:#ccc;">
+                <p>Email: <a href="mailto:anupamnair2003@gmail.com" style="color:var(--accent-color); text-decoration:none;">anupamnair2003@gmail.com</a></p>
+                <p>Phone: +91 95396 27006</p>
+                <p>GitHub: <a href="https://github.com/Anupam-Nair" target="_blank" style="color:var(--accent-color); text-decoration:none;">https://github.com/Anupam-Nair</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/anupamnairmech" target="_blank" style="color:var(--accent-color); text-decoration:none;">https://www.linkedin.com/in/anupamnairmech</a></p>
+                <p>HackerRank: <a href="https://www.hackerrank.com/profile/anupamnair2003" target="_blank" style="color:var(--accent-color); text-decoration:none;">https://www.hackerrank.com/profile/anupamnair2003</a></p>
+                <p>Forage: <a href="https://www.theforage.com/profile/myYfnb8iMdomXfiYF" target="_blank" style="color:var(--accent-color); text-decoration:none;">https://www.theforage.com/profile/myYfnb8iMdomXfiYF</a></p>
+            </div>
         </section>
 
     </div>
@@ -528,5 +633,4 @@
     </footer>
 
 </body>
-
 </html>
